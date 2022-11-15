@@ -1113,9 +1113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarImage: {fileID: 1985239620}
   avatarSprites:
-  - {fileID: 21300000, guid: 43ad51e043491b94d8f6c62d55ac5ede, type: 3}
-  - {fileID: 21300000, guid: 5d52b20f865aff242bfcb08c3b6f61a5, type: 3}
-  - {fileID: 21300000, guid: daf2ab606d4db0d4f9ecf4c02137d2a8, type: 3}
+  - {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  - {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
+  - {fileID: 21300000, guid: ec03f79379868c642b48ae5ddc821b6d, type: 3}
 --- !u!114 &601639072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,16 +1123,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601639068}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba37002ab07e15c41b6c735d7a8280f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   avatarImage: {fileID: 1985239620}
   avatarSprites:
-  - {fileID: 21300000, guid: 43ad51e043491b94d8f6c62d55ac5ede, type: 3}
-  - {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
-  - {fileID: 21300000, guid: bb51334c6930f864abac38001f7bdf6e, type: 3}
+  - {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  - {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
+  - {fileID: 21300000, guid: ec03f79379868c642b48ae5ddc821b6d, type: 3}
 --- !u!1 &686827314
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,8 +3249,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601639072}
-        m_TargetAssemblyTypeName: PilihAvatar, Assembly-CSharp
+      - m_Target: {fileID: 601639071}
+        m_TargetAssemblyTypeName: AvatarSelector, Assembly-CSharp
         m_MethodName: shiftSelectedIndex
         m_Mode: 3
         m_Arguments:
@@ -4622,7 +4622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 43ad51e043491b94d8f6c62d55ac5ede, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4724,8 +4724,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601639072}
-        m_TargetAssemblyTypeName: PilihAvatar, Assembly-CSharp
+      - m_Target: {fileID: 601639071}
+        m_TargetAssemblyTypeName: AvatarSelector, Assembly-CSharp
         m_MethodName: shiftSelectedIndex
         m_Mode: 3
         m_Arguments:

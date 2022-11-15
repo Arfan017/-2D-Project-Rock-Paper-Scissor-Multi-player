@@ -17,24 +17,22 @@ public class PilihAvatar : MonoBehaviour
         avatarImage.sprite = avatarSprites[selectedIndex];
     }
 
-    public void shiftSelectedIndex(int shift)
+    public void ShiftSelectedIndex(int shift)
     {
         selectedIndex += shift;
 
         while (selectedIndex >= avatarSprites.Length)
-        {
             selectedIndex -= avatarSprites.Length;
-        }
 
         while (selectedIndex < 0)
-        {
+
             selectedIndex += avatarSprites.Length;
-        }
+
+        avatarImage.sprite = avatarSprites[selectedIndex];
 
         PlayerPrefs.SetInt("AvatarIndex", selectedIndex);
         var property = new Hashtable();
         property.Add("AvatarIndex", selectedIndex);
         PhotonNetwork.LocalPlayer.SetCustomProperties(property);
-        avatarImage.sprite = avatarSprites[selectedIndex];
     } 
 }

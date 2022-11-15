@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
-using Hastable = ExitGames.Client.Photon.Hashtable;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class AvatarSelector : MonoBehaviour
 {
@@ -15,8 +15,10 @@ public class AvatarSelector : MonoBehaviour
     {
         selectedIndex = PlayerPrefs.GetInt("AvatarIndex", 0);
         avatarImage.sprite = avatarSprites[selectedIndex];
+        SaveSelectedIndex();
     }
 
+    // shifting index milih ke kiri atau kanan dari Sprite[]
     public void shiftSelectedIndex(int shift)
     {
         selectedIndex += shift;
@@ -32,9 +34,19 @@ public class AvatarSelector : MonoBehaviour
         }
 
         avatarImage.sprite = avatarSprites[selectedIndex];
+
+        SaveSelectedIndex();
+
+    }
+
+    private void SaveSelectedIndex()
+    {
+                //simpan di local storage
         PlayerPrefs.SetInt("AvatarIndex", selectedIndex);
+
+        // simpan di network
         var property = new Hashtable();
         property.Add("AvatarIndex", selectedIndex);
         PhotonNetwork.LocalPlayer.SetCustomProperties(property);
-    } 
+    }
 }

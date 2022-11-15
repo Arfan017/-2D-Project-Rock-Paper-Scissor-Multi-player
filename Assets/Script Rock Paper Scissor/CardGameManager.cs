@@ -13,8 +13,7 @@ public class CardGameManager : MonoBehaviour, IOnEventCallback
     public CardPlayer P1;
     public CardPlayer P2;
     public float restoreValue = 5;
-    public float demageValue = 10;
-
+    public float damageValue = 10;
     public GameState State, NextState = GameState.NetPlayersInitialization;
     public GameObject gameOverPanel;
     public TMP_Text winnerText;
@@ -45,6 +44,16 @@ public class CardGameManager : MonoBehaviour, IOnEventCallback
             StartCoroutine(PingCoroutine());
             State = GameState.NetPlayersInitialization;
             NextState = GameState.NetPlayersInitialization;
+
+            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(PropertyNames.Room.RestoreValue, out var restoreValue))
+            {
+                this.restoreValue = (float) restoreValue;
+            }
+
+            if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(PropertyNames.Room.DamageValue, out var damageValue))
+            {
+                this.damageValue = (float) damageValue;
+            }
         }
         else
         {
@@ -116,13 +125,13 @@ public class CardGameManager : MonoBehaviour, IOnEventCallback
                 {
                     if (demagedPlayer == P1)
                     {
-                        P1.changeHealth(-demageValue);
+                        P1.changeHealth(-damageValue);
                         P2.changeHealth(restoreValue);
                     }
                     else
                     {
                         P1.changeHealth(restoreValue);
-                        P2.changeHealth(-demageValue);
+                        P2.changeHealth(-damageValue);
                     } 
 
                     var winner = GetWinnwer();
