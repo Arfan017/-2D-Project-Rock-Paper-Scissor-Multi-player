@@ -170,7 +170,7 @@ Transform:
   - {fileID: 1758325120}
   - {fileID: 238612716}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &70657732
 GameObject:
@@ -902,12 +902,12 @@ MonoBehaviour:
     MaxHealth: 100
     RestoreValue: 5
     DamageValue: 10
-  State: 2
-  NextState: 2
+  State: 1
+  NextState: 1
   gameOverPanel: {fileID: 1026895209}
   winnerText: {fileID: 826077821}
   PintText: {fileID: 247323047}
-  Online: 0
+  Online: 1
 --- !u!4 &334359185
 Transform:
   m_ObjectHideFlags: 0
@@ -921,7 +921,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &334359186
 MonoBehaviour:
@@ -1013,7 +1013,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360018330
 GameObject:
@@ -1752,14 +1752,13 @@ GameObject:
   m_Component:
   - component: {fileID: 527602576}
   - component: {fileID: 527602575}
-  - component: {fileID: 527602577}
   m_Layer: 0
   m_Name: P2 Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &527602575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1775,11 +1774,11 @@ MonoBehaviour:
   player: {fileID: 1978395427}
   gameManager: {fileID: 334359184}
   stats:
-    Name: Default
-    choosingInterval: 0.2
-    MaxHealth: 100
-    RestoreValue: 5
-    DamageValue: 10
+    Name: 
+    choosingInterval: 0
+    MaxHealth: 0
+    RestoreValue: 0
+    DamageValue: 0
   IsReady: 0
 --- !u!4 &527602576
 Transform:
@@ -1796,43 +1795,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &527602577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527602574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ce36df9d41399479fddbad5ac84381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bot: {fileID: 527602575}
-  selectedDifficulity: 0
-  botDifficulities:
-  - Name: Easy
-    choosingInterval: 0.5
-    MaxHealth: 75
-    RestoreValue: 3
-    DamageValue: 7
-  - Name: Normal
-    choosingInterval: 0.2
-    MaxHealth: 100
-    RestoreValue: 5
-    DamageValue: 10
-  - Name: Hard
-    choosingInterval: 0.1
-    MaxHealth: 150
-    RestoreValue: 10
-    DamageValue: 15
-  - Name: Extreme
-    choosingInterval: 0.05
-    MaxHealth: 200
-    RestoreValue: 15
-    DamageValue: 20
-  enableRemoteConfig: 1
-  difficultyKey: Difficulty
 --- !u!1 &533344041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2182,7 @@ RectTransform:
   - {fileID: 1288238207}
   - {fileID: 566787442}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4046,51 +4008,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139838012}
   m_CullTransparentMesh: 1
---- !u!1 &1178637302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1178637304}
-  - component: {fileID: 1178637303}
-  m_Layer: 0
-  m_Name: UGS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1178637303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178637302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ae092485fed35846b652d15b05ab0e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  environmentName: production
---- !u!4 &1178637304
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178637302}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 478.08722, y: 973.3625, z: -6.462376}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204115525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,16 +4838,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 334359186}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 334359187}
+        m_TargetAssemblyTypeName: GamePlayNetworkManager, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: GamePlayCardBot
+          m_StringArgument: GamePlay
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1341691828

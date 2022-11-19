@@ -14,20 +14,37 @@ public class CardPlayer : MonoBehaviour
     public TMP_Text healthtext;
     public HealthBar healthBar;
     public float Health;
-    public float MaxHealth;
+    public PlayerStats stats = new PlayerStats
+    {
+        MaxHealth = 100,
+        RestoreValue = 5,
+        DamageValue = 10
+    };
     public AudioSource audioSource;
     public AudioClip damageClip;
     private Tweener animationTweener;
-    public TMP_Text NickName { get => nameText;}
-    
+    public TMP_Text NickName { get => nameText; }
+
+    public bool IsReady = false;
+
     private void Start()
     {
-        Health = MaxHealth;
+        Health = stats.MaxHealth;
+    }
+
+    public void SetStats(PlayerStats newStats, bool restoreFullHealth = false)
+    {
+        this.stats = newStats;
+        if (restoreFullHealth)
+        {
+            Health = stats.MaxHealth;
+        }
+
+        UpdateHealthBar();
     }
 
     public Attack? AttackValue
     {
-
         get => chosenCard == null ? null : chosenCard.AttackValue;
 
         // get{
@@ -64,10 +81,17 @@ public class CardPlayer : MonoBehaviour
     public void changeHealth(float amount)
     {
         Health += amount;
-        Health = Mathf.Clamp(Health, 0, 100);
+        Health = Mathf.Clamp(Health, 0, stats.MaxHealth);
+        
+        UpdateHealthBar();
+    }
 
-        healthBar.UpdateBar(Health/MaxHealth);
-        healthtext.text = Health + "/" + MaxHealth;
+    public void UpdateHealthBar()
+    {
+        //health
+        healthBar.UpdateBar(Health / stats.MaxHealth);
+        //text
+        healthtext.text = Health + "/" + stats.MaxHealth;
     }
 
     public void AnimateAttack()
@@ -78,7 +102,7 @@ public class CardPlayer : MonoBehaviour
 
     public void AnimateDemage()
     {
-        audioSource.PlayOneShot(damageClip); 
+        audioSource.PlayOneShot(damageClip);
         var image = chosenCard.GetComponent<Image>();
         animationTweener = image
             .DOColor(Color.red, 0.1f)
